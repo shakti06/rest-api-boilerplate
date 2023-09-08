@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only src/server.ts"
+    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "typeorm": "ts-node-dev  node_modules/.bin/typeorm",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
+
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   },
   "dependencies": {
     "@types/node": "^20.5.9",
+    "dotenv": "^16.3.1",
     "pg": "^8.11.3",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.17"
